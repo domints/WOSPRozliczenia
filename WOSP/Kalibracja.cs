@@ -20,6 +20,11 @@ namespace WOSP
 	/// </summary>
 	public partial class Kalibracja : Form
 	{
+		
+		//
+		// TODO: Przycisk Testuj nic nie drukuje, a powinien to, co z głównej formatki, tylko z testowymi danymi, żeby ustawić kalibrację, ale nie miałem na to czasu
+		//
+
 		public Kalibracja()
 		{
 			//
