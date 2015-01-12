@@ -26,6 +26,8 @@ namespace WOSP
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+			
+			//odczyt ustawień
 			textBox1.Text = Settings.Default.XCalib.ToString();
 			textBox2.Text = Settings.Default.YCalib.ToString();
 			//
@@ -40,6 +42,7 @@ namespace WOSP
 		
 		void Button3Click(object sender, EventArgs e)
 		{
+			//Zapis do ustawień. Powinno wywołać event w MainForm, ale nie wywołuje 
 			Settings.Default.XCalib = int.Parse(textBox1.Text);
 			Settings.Default.YCalib = int.Parse(textBox2.Text);
 			Settings.Default.Save();
@@ -47,11 +50,13 @@ namespace WOSP
 		
 		void TextBox1TextChanged(object sender, EventArgs e)
 		{
+			//Czyszczenie z innego niż 0-9 oraz "-"
 			textBox1.Text = Regex.Replace(textBox1.Text, @"[^0-9-]", "");
 		}
 		
 		void TextBox2TextChanged(object sender, EventArgs e)
 		{
+			//Czyszczenie z innego niż 0-9 oraz "-"
 			textBox2.Text = Regex.Replace(textBox2.Text, @"[^0-9-]", "");
 		}
 	}
